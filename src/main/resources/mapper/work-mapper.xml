@@ -64,4 +64,10 @@
         FROM db_mw.work w LEFT JOIN db_mw.museum m
                 ON w.museumId = m.id;
     </select>
+
+    <select id="queryWorksByMuseumId" parameterType="int" resultType="work">
+        SELECT *
+        FROM db_mw.work
+        WHERE museumId = #{museumId};
+    </select>
 </mapper>

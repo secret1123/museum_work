@@ -1,11 +1,7 @@
 <!DOCTYPE html><%@ page pageEncoding="UTF-8"%><%@ include file="/commons/inc.jsp"%>
 <html>
 <head>
-    <meta charset="UTF-8" />
     <title>work page</title>
-    <script>
-        function del() { return confirm('REMOVE?'); }
-    </script>
 </head>
 <body>
 <table border="1">

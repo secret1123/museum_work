@@ -1,7 +1,6 @@
 <!DOCTYPE html><%@ page pageEncoding="UTF-8"%><%@ include file="/commons/inc.jsp"%>
 <html>
 <head>
-    <meta charset="UTF-8" />
     <title>work add page</title>
 </head>
 <body>
@@ -14,5 +13,8 @@
     <input name="museumId" placeholder="MUSEUMID"><br>
     <input type="submit" value="ADD">
 </form>
+<c:import url="${ctx}/commons/page.jsp">
+    <c:param name="path" value="work/${sessionScope.pagination.statement}"/>
+</c:import>
 </body>
 </html>

@@ -5,6 +5,7 @@ import mw.service.GenericService;
 import mw.util.Pagination;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by AnLu on
@@ -41,13 +42,23 @@ public abstract class GenericServiceImpl<T extends Serializable,ID extends Numbe
     }
 
     @Override
-    public T query(String statement, Object parameter) {
-        return genericDao.query(statement,parameter);
+    public T queryOne(String statement, Object parameter) {
+        return genericDao.queryOne(statement,parameter);
     }
 
     @Override
     public T queryById(ID id) {
         return genericDao.queryById(id);
+    }
+
+    @Override
+    public List<T> queryList(String statement, Object parameter) {
+        return genericDao.queryList(statement,parameter);
+    }
+
+    @Override
+    public List<T> queryAll() {
+        return genericDao.queryAll();
     }
 
     @Override
