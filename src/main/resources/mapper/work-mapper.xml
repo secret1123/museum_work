@@ -46,21 +46,31 @@
     </select>
 
     <resultMap id="queryWorks_map" type="work">
+        <id property="id" column="id"/>
         <result property="title" column="title"/>
         <result property="picture" column="picture"/>
         <result property="artist" column="artist"/>
         <result property="year" column="year"/>
         <association property="museum" javaType="museum">
+            <id property="id" column="museum_id"/>
             <result property="name" column="name"/>
+            <result property="logo" column="logo"/>
+            <result property="picture" column="museum_picture"/>
+            <result property="address" column="address"/>
         </association>
     </resultMap>
     <select id="queryWorks" resultMap="queryWorks_map">
         SELECT
+            w.id,
             w.title,
             w.picture,
             w.artist,
             w.year,
-            m.name
+            m.id AS museum_id,
+            m.name,
+            m.logo,
+            m.picture AS museum_picture,
+            m.address
         FROM db_mw.work w LEFT JOIN db_mw.museum m
                 ON w.museumId = m.id;
     </select>
