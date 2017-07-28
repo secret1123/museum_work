@@ -1,19 +1,21 @@
-<!DOCTYPE html><%@ page pageEncoding="UTF-8"%><%@ include file="/commons/inc.jsp"%>
+<!DOCTYPE html>
+<%@ page pageEncoding="UTF-8" %>
+<%@ include file="/commons/inc.jsp" %>
 <html>
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>work index page</title>
     <script src="${ctx}/assets/js/jquery.min.js"></script>
     <script>
         $(function () {
-            $('button').click(function(){
+            $('button').click(function () {
                 $.ajax({
-                    url:'/work/test',
-                    type:'post',
-                    dateType:'json',
-                    success:function(data){
-                        $.each(data,function (index, item) {
-                            console.log(index+':'+item.title+","+item.museum.name);
+                    url: '/work/test',
+                    type: 'post',
+                    dateType: 'json',
+                    success: function (data) {
+                        $.each(data, function (index, item) {
+                            console.log(index + ':' + item.title + "," + item.museum.name);
                         })
                     }
                 })
